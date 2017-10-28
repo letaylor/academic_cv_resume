@@ -1,1 +1,2 @@
 Makefile linguist-vendored=false
+*pdf linguist-vendored=false
