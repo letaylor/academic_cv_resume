@@ -1,2 +1,2 @@
-Makefile linguist-vendored=false
-*pdf linguist-vendored=false
+Makefile linguist-vendored=true
+*pdf linguist-vendored=true
