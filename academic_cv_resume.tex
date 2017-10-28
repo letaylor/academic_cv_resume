@@ -34,6 +34,7 @@
 %\usepackage{times}
 
 % LOAD PACKAGES:
+\usepackage{needspace} % to prevent page break in important lines
 \usepackage{hyperref}
 % below are for references
 \usepackage{hanging}
@@ -221,9 +222,9 @@
 \begin{rSection}{Technical Skills}
 \vspace{-0.3em} $\geq$ 4 years of experience unless stated otherwise:
 
-%@{  } says add 2 spaces before each entry
+\needspace{4\baselineskip} % keep X number of lines together
 {\bf Computer science}\smallskip\\
-\begin{tabular}{@{}li{\pcolwdth}}
+\begin{tabular}{@{}li{\pcolwdth}} %@{  } says add 2 spaces before each entry
 \parbox[t][][t]{\pcolleftwdth}{Languages}
     & \item Python, R \\
     & \item 1 year experience, not used recently: Java, C/C++ \smallskip\\
@@ -235,6 +236,7 @@
     \pointskip
 \fi
 
+\needspace{3\baselineskip} % keep X number of lines together
 {\bf Life/Biomedical science}\smallskip\\
 \begin{tabular}{@{}li{\pcolwdth}}
 \parbox[t][][t]{\pcolleftwdth}{Genomics data}
