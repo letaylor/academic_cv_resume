@@ -1,0 +1,315 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (C) 2017 by Leland Taylor
+%
+% This file has been modified and re-distributed from a file by Trey 
+% Hunner. The original copyright by Trey Hunner is reproduced below.
+%
+% Copying and distribution of this file, with or without modification,
+% are permitted in any medium without royalty provided the copyright
+% notice and this notice are preserved.  This file is offered as-is,
+% without any warranty.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (C) 2010 by Trey Hunner
+%
+% Copying and distribution of this file, with or without modification,
+% are permitted in any medium without royalty provided the copyright
+% notice and this notice are preserved.  This file is offered as-is,
+% without any warranty.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{resume} % Use the custom resume.cls style
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SETTINGS: unless below, settings are set in resume.cls
+% IMPORTANT: within resume.cls there is a toggle between resume and cv settings
+
+% Document margins
+\usepackage[left=0.7in, top=0.7in, right=0.7in, bottom=0.7in]{geometry} 
+
+% Change font
+%\usepackage{caladea}
+%\usepackage{times}
+
+% LOAD PACKAGES:
+\usepackage{hyperref}
+% below are for references
+\usepackage{hanging}
+\usepackage{doi}
+\usepackage{bibentry}
+\usepackage{natbib}
+\usepackage{longtable}
+
+% SETTINGS for TECHNICAL SKILLS, TRANSFERABLE SKILLS, PROFESSIONAL SOCIETIES:
+\newlength{\pcolleftwdth} % value for wrapping on left side of list
+\setlength{\pcolleftwdth}{0.16\textwidth}
+\setlength{\pcolwdth}{\dimexpr\textwidth-\pcolleftwdth-2\tabcolsep} % list
+
+% ALSO SEE SETTINGS IN PUBLICATIONS SECTION
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HEADER
+\name{John Doe} % Your name
+
+%% Complete Contact Info
+
+% ----- Line 2
+\address{\href{mailto:johndoe@blank.com}{johndoe@blank.com} \hfill
+    \href{https://WEBSITE}{https://WEBSITE.com} \hfill
+    (000)~$\cdot$~000~$\cdot$~0000}
+
+% ----- Line 1
+\address{your address} % Your address
+
+
+\begin{document}
+
+\ifresume % FOR_RESUME
+\else % FOR_CV 
+    \pointskip 
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EDUCATION 
+\begin{rSection}{Education}
+
+\begin{rSubsection}{University of X}{2013--present}{Doctor of Philosophy, SUBJECT}{TOWN, STATE, COUNTRY}
+    \item Doctoral Dissertation: \emph{BLANK}
+    \item Adviser: Dr. BLANK
+\end{rSubsection}
+
+% ADD SKIP BETWEEN SECTIONS FOR CV - cant automate becuase trailling skip
+\ifresume % FOR_RESUME
+\else % FOR_CV
+    \smallskip
+\fi
+
+%------------------------------------------------
+
+\begin{rSubsection}{University of X}{2008--2012}{Bachelor of Science, \emph{Cum Laude} with High Honours in SUBJECT}{TOWN, STATE, COUNTRY}
+    \item BSc Thesis: \emph{BLANK}
+    \item Adviser: Dr. BLANK
+\end{rSubsection}
+
+\end{rSection}
+
+
+\ifresume % FOR_RESUME
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % SCHOLARSHIPS
+    \begin{rSection}{Selected scholarships, awards, and honours}
+    \vspace{-0.3em} X scholarships, awards, and honours. Selected include:
+    
+    \begin{rEntry}{BLANK Scholarship}{present}{Funding for PhD studies}\end{rEntry}
+    
+    \begin{rEntry}{BLANK Scholarship}{June 2016}{Funding for PhD studies}\end{rEntry}
+        
+    \begin{rEntry}{BLANK Scholarship}{Aug 2016}{Funding for PhD studies}\end{rEntry}
+
+    \end{rSection}
+\else % FOR_CV
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % SCHOLARSHIPS
+    \begin{rSection}{Scholarships}
+
+    \begin{rEntry}{BLANK Scholarship}{present}{Funding for PhD studies}\end{rEntry}
+    
+    \begin{rEntry}{BLANK Scholarship}{June 2016}{Funding for PhD studies}\end{rEntry}
+        
+    \begin{rEntry}{BLANK Scholarship}{Aug 2016}{Funding for PhD studies}\end{rEntry}
+
+    \end{rSection}
+    %\clearpage
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % AWARDS & HONOURS
+    \begin{rSection}{Awards \& Honours}
+    
+    \begin{rEntry}{X Travel Grant}{Aug 2017}{For X Conference, CITY, COUNTRY}\end{rEntry}
+    
+    \begin{rEntry}{X Society of Mathematics}{Aug 2011}{Elected to Honours Society}\end{rEntry}
+    
+    \end{rSection}
+\fi % end FOR_CV
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WORK EXPERIENCE SECTION
+\begin{rSection}{Research Experience}
+    
+\begin{rSubsection}{PhD Thesis Research Project}{2013--present}{}{TOWN, STATE, COUNTRY}
+\item DESCRIPTION.
+\end{rSubsection}
+
+% ADD SKIP BETWEEN SECTIONS FOR CV - cant automate becuase trailling skip
+\ifresume % FOR_RESUME
+\else % FOR_CV
+    \smallskip
+\fi
+
+%------------------------------------------------
+
+\begin{rSubsection}{Programmer}{2010--2012}{}{TOWN, STATE, COUNTRY}
+\item DESCRIPTION.
+\end{rSubsection}
+
+\end{rSection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PUBLICATIONS SECTION
+\ifresume %% FOR_RESUME
+\else %% FOR_CV
+    \bibliographystyle{abbrv} % citation style
+    \nobibliography{publications/publications}
+    
+    % make a hanging bibentry
+    % \newcommand\hangbibentry[1]{%
+    %     %\smallskip\par\hangpara{1em}{1}\bibentry{#1}\smallskip\par % original
+    %     \par\hangpara{0.8em}{1}\bibentry{#1}\par %{indent}{afterline}
+    % }
+    
+    \begin{rSection}{Publications}
+    \setlength{\LTleft}{-0.5em plus -1fill}
+    \begin{longtable}{
+        p{\lcolglobal} % lcolglobal set in resume.cls
+        p{\dimexpr\textwidth-\lcolglobal-2\tabcolsep}}
+    2017 & \bibentry{article_1}\pointskip\\
+         & \bibentry{article_2}\pointskip\\
+    2015 & \bibentry{article_3}\pointskip\\
+         & \bibentry{article_3}\pointskip\\
+    2010 & \bibentry{article_3}\\
+    \end{longtable}\par
+    
+    \vspace{-1.6em} % need to decrease vertical space for some reason
+    \end{rSection}
+\fi % end FOR_CV
+
+\ifresume
+\else
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % GRANTS SECTION
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TEACHING SECTION
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % PRESENTATIONS SECTION
+    \begin{rSection}{Oral Presentations}
+        
+        \begin{rPres}{BLANK Conference, ORGANISATION, London, UK}{Aug 2015}{TALK title}\end{rPres}
+        
+    \end{rSection}
+    
+    %----------------------------------------------------------------------
+    
+    \begin{rSection}{Conference Poster Presentations}
+        
+        \begin{rPres}{BLANK Conference, ORGANISATION, London, UK}{Aug 2015}{POSTER title}\end{rPres}
+
+    \end{rSection}
+\fi % end FOR_CV
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TECHNICAL SKILLS SECTION
+
+\begin{rSection}{Technical Skills}
+\vspace{-0.3em} $\geq$ 4 years of experience unless stated otherwise:
+
+%@{  } says add 2 spaces before each entry
+{\bf Computer science}\smallskip\\
+\begin{tabular}{@{}li{\pcolwdth}}
+\parbox[t][][t]{\pcolleftwdth}{Languages}
+    & \item Python, R \\
+    & \item 1 year experience, not used recently: Java, C/C++ \smallskip\\
+\parbox[t][][t]{\pcolleftwdth}{Systems}
+    & \item Unix, Linux \smallskip\\
+\end{tabular}\par
+\ifresume % FOR_RESUME
+\else % FOR_CV
+    \pointskip
+\fi
+
+{\bf Life/Biomedical science}\smallskip\\
+\begin{tabular}{@{}li{\pcolwdth}}
+\parbox[t][][t]{\pcolleftwdth}{Genomics data}
+    & \item ADD ITEM HERE.\\\smallskip\\
+\parbox[t][][t]{\pcolleftwdth}{BLANK data}
+    & \item ADD ITEM HERE.\\
+\end{tabular}\par
+
+
+\end{rSection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TRANSFERABLE SKILLS SECTION
+\begin{rSection}{Transferable Skills}
+
+\begin{tabular}{@{}li{\pcolwdth}}
+%\parbox[t][][t]{\pcolleftwdth}{\bf Leadership}
+\parbox[t][][t]{\pcolleftwdth}{Leadership}
+    & \item ADD ITEM HERE.\\\smallskip\\
+\parbox[t][][t]{\pcolleftwdth}{Organisation}
+    & \item ADD ITEM HERE.\\\smallskip\\
+\parbox[t][][t]{\pcolleftwdth}{Teamwork}
+    & \item ADD ITEM HERE.\\
+\end{tabular}\par
+
+\end{rSection}
+
+
+\ifresume
+    \begin{rSection}{Selected Publications}
+    \vspace{-0.3em} X peer-reviewed, X additional in submission. X lead author. Selected articles:
+    
+    \begin{minipage}[t]{\linewidth}
+        \begin{hangparas}{0.8em}{1}
+        
+        \textbf{J. D. Doe}, F. Lastname, F. Lastname, F. Lastname, F. Lastname, and F. Lastname. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Knowledge, 110(8):2099506, Oct. 2017.\smallskip
+        
+        \textbf{J. D. Doe}, F. Lastname, F. Lastname, F. Lastname, F. Lastname, and F. Lastname. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Knowledge, 110(8):2099506, Oct. 2017.\smallskip
+        
+        \end{hangparas}
+    
+    \end{minipage}\par
+    \end{rSection}
+\fi
+
+\ifresume
+\else
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % PROFESSIONAL SOCIETIES
+    \begin{rSection}{Professional Societies}
+    
+    \begin{tabular}{@{}
+        p{\pcolleftwdth}
+        p{\pcolwdth}}
+        {2017--present}&{National BLANK Association}\\
+        {2017--present}&{National BLANK Association}\\
+        {2017--present}&{National BLANK Association}\\
+    \end{tabular}\par
+
+    \end{rSection}
+\fi
+
+
+\ifresume
+\else
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % REFERENCES SECTION
+    \begin{rSection}{References}
+
+    {\bf Dr. BLANK}\\
+    Professor of BLANK \hfill UNIVERSITY\\
+    EMAIL@EMAIL.ORG \hfill (000)~$\cdot$~000~$\cdot$~0000
+
+    \end{rSection}
+\fi
+
+\end{document}
