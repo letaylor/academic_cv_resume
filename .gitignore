@@ -30,9 +30,6 @@
 *#*
 *.nls*
 *.nlg*
-thesis.txt*
-thesis.bcf*
-thesis.run.xml*
 *run.xml*
 *.latexmkrc*
 *_latexmk*
