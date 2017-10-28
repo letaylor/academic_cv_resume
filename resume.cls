@@ -42,6 +42,7 @@
 \usepackage{ifthen} % Required for ifthenelse statements
 \usepackage{multirow}
 \usepackage{enumitem} % Required for SKILLS LIST
+\usepackage{needspace} % to prevent page break in important lines
 
 % SETTINGS:
 % general spacing settings
@@ -136,6 +137,7 @@
 
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
+  \needspace{3\baselineskip} % helps prevent hanging headers
  %\sectionskip % skip before section
   \MakeUppercase{#1} % Section title
   \sectionlineskip
